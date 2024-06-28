@@ -1,9 +1,11 @@
 const express = require('express');
 require('dotenv').config();
+const config = require('./config');
 const jwt = require('jsonwebtoken');
 const mysql = require('mysql');
 const cors = require('cors');
 const bcrypt = require('bcrypt');
+
 
 const app = express();
 app.use(cors());
@@ -578,6 +580,6 @@ app.get('/TopFiveCategory/:ID', (req, res) => {
 })
 
 
-app.listen(5001, () => {
+app.listen(config.PORT, () => {
     console.log("Server is listening")
 })
